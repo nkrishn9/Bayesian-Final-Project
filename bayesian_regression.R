@@ -19,18 +19,9 @@ nu0 = 2
 s20 = 1
 
 S = 10000
-
-train_index = sample(n, size = n/2)
-train_data = X_no_intercept[train_index, ]
-train_labels = y[train_index, ]
-test_data = X_no_intercept[-train_index, ]
-test_labels = y[-train_index, ]
-test_data = as.matrix(cbind(rep(1, length(test_labels), 1), test_data))
-
-train_data_with_intercept = as.matrix(cbind(rep(1, length(test_labels), 1), train_data))
-
 bayesian_error = 0
 num_iterations = 10
+
 for (i in 1:num_iterations) {
   train_index = sample(n, size = n/2)
   train_data = X_no_intercept[train_index, ]
