@@ -17,8 +17,6 @@ for (t in 1:length(tissue_files)) {
   
   n = dim(X)[1]
   p = dim(X)[2]
-  #gs = seq(0, 10, 0.5)
-  #g = n
   nu0 = 2
   s20 = 1
   
