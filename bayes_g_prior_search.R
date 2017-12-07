@@ -1,6 +1,5 @@
 library(MASS)
 tissue_files = c("processed_data/adipose.csv", "processed_data/muscle.csv", "processed_data/thyroid.csv", "processed_data/whole_blood.csv")
-#tissue_files = c("processed_data/adipose.csv")
 gs = seq(0, 10, 0.5)
 bayesian_errors_across_tissues = matrix(0, length(tissue_files), length(gs))
 
@@ -10,10 +9,6 @@ for (t in 1:length(tissue_files)) {
   labels_column = dim(data_file)[2]
   train_include = -c(labels_column)
   label_include = c(labels_column)
-  
-  # data_file = read.table("crime.dat", header = TRUE)
-  # train_include = -c(1)
-  # label_include = c(1)
   
   y = as.matrix(data_file[,label_include])
   X = as.matrix(cbind(rep(1, dim(y)[1], 1), data_file[,train_include]))
