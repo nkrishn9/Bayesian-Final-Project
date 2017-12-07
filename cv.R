@@ -61,7 +61,7 @@ for (i in lambdas) {
 
 png("figures/cv.png", width=6, height=4, units="in", res=300)
 plot(log(lambdas), cv_results[1, ], 
-     type='l', main="Cross-Validation Results for Ridge Regression", 
+     type='l', main="Cross-Validation Results for Lambda in Ridge Regression", 
      xlab="Log(lambdas)", ylab="RMSE (Years)", col="blue", ylim=c(10, 25))
 lines(log(lambdas), cv_results[2, ], col="darkorange")
 lines(log(lambdas), cv_results[3, ], col="darkgreen")
